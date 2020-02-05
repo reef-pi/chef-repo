@@ -1,12 +1,17 @@
+extend ReefPiHelper
+
+deb_pkg = installer_name
+deb_url = installer_url
+
 directory '/opt/reef-pi'
 
-remote_file '/opt/reef-pi/reef-pi-3.1-pi0.deb' do
-  source 'https://github.com/reef-pi/reef-pi/releases/download/3.1/reef-pi-3.1-pi0.deb'
+remote_file "/opt/reef-pi/#{deb_pkg}" do
+  source  deb_url
   notifies :run, 'execute[install-reef-pi]', :immediately
 end
 
 execute 'install-reef-pi' do
-  command 'dpkg -i /opt/reef-pi/reef-pi-3.1-pi0.deb'
+  command "dpkg -i /opt/reef-pi/#{deb_pkg}"
   action :nothing
 end
 

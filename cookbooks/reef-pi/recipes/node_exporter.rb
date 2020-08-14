@@ -17,7 +17,7 @@ execute 'extract_node_exporter' do
 end
 
 link '/usr/bin/node_exporter' do
-  to "/opt/node_exporter/node_exporter-#{_version}.linux-armv6/node_exporter"
+  to "/opt/node_exporter/node_exporter-#{_version}.linux-#{_arch}/node_exporter"
 end
 
 systemd_unit 'node_exporter.service' do

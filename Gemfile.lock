@@ -1,27 +1,9 @@
-GIT
-  remote: https://github.com/PagerDuty/blender
-  revision: 94fae7db13a44d1c437eb9a77ad39d8e377862d9
-  specs:
-    pd-blender (0.6.1)
-      highline
-      mixlib-log
-      mixlib-shellout
-      net-scp
-      net-ssh
-      net-ssh-multi
-      rufus-scheduler
-      thor
-      thread_safe
-
 GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     bcrypt_pbkdf (1.0.1)
-    blender-chef (0.3)
-      chef (>= 12.1.1)
-      pd-blender (>= 0.5)
     builder (3.2.4)
     chef (15.6.10)
       addressable
@@ -69,22 +51,16 @@ GEM
       mixlib-log (>= 2.0, < 4.0)
       rack (~> 2.0, >= 2.0.6)
       uuidtools (~> 2.1)
-    concurrent-ruby (1.1.7)
     diff-lcs (1.3)
     ed25519 (1.2.4)
     equatable (0.6.1)
     erubi (1.9.0)
     erubis (2.7.0)
-    et-orbi (1.2.4)
-      tzinfo
     ffi (1.12.1)
     ffi-libarchive (1.0.0)
       ffi (~> 1.0)
     ffi-yajl (2.3.3)
       libyajl2 (~> 1.2)
-    fugit (1.3.8)
-      et-orbi (~> 1.1, >= 1.1.8)
-      raabro (~> 1.3)
     fuzzyurl (0.9.0)
     gssapi (1.3.0)
       ffi (>= 1.0.1)
@@ -145,12 +121,9 @@ GEM
     plist (3.5.0)
     proxifier (1.0.3)
     public_suffix (4.0.3)
-    raabro (1.3.1)
     rack (2.1.1)
     rubyntlm (0.6.2)
     rubyzip (2.0.0)
-    rufus-scheduler (3.6.0)
-      fugit (~> 1.1, >= 1.1.6)
     strings (0.1.8)
       strings-ansi (~> 0.1)
       unicode-display_width (~> 1.5)
@@ -158,8 +131,6 @@ GEM
     strings-ansi (0.2.0)
     syslog-logger (1.6.8)
     systemu (2.6.5)
-    thor (1.0.1)
-    thread_safe (0.3.6)
     tomlrb (1.2.9)
     train-core (3.2.5)
       json (>= 1.8, < 3.0)
@@ -184,8 +155,6 @@ GEM
       tty-screen (~> 0.7)
       wisper (~> 2.0.0)
     tty-screen (0.7.0)
-    tzinfo (2.0.2)
-      concurrent-ruby (~> 1.0)
     unicode-display_width (1.6.1)
     unicode_utils (1.4.0)
     uuidtools (2.1.5)
@@ -210,9 +179,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  blender-chef
   chef
-  pd-blender!
 
 BUNDLED WITH
    2.1.4

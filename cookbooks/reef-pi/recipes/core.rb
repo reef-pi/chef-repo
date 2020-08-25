@@ -1,4 +1,4 @@
-package %w(strace vim htop tree git curl)
+package %w(strace vim htop tree git curl screen)
 
 service 'ssh' do
   action [:start, :enable]

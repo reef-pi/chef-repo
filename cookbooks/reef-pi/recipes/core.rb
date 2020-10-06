@@ -1,4 +1,4 @@
-package %w(strace vim htop tree git curl screen)
+package %w(strace vim htop tree git curl screen i2c-tools libyaml-0-2 dmidecode)
 
 service 'ssh' do
   action [:start, :enable]
@@ -26,7 +26,7 @@ systemd_unit 'chef-client-ondemand.service' do
      'Install' => { 'WantedBy' => 'multi-user.target' },
      'Service' =>{
       'Type'=> 'oneshot',
-       'ExecStart' => '/usr/bin/chef-client'
+       'ExecStart' => '/opt/chef/bin/chef-client'
      }
   )
   action [:create]

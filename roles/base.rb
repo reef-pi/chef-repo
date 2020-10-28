@@ -1,2 +1,2 @@
 name 'base'
-run_list 'recipe[reef-pi::core]', 'recipe[reef-pi::node_exporter]'
+run_list 'recipe[foundation]', 'recipe[foundation::node_exporter]'

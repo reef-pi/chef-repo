@@ -1,8 +1,14 @@
-extend ReefPiHelper
+_arch = 'amd64'
+
+case node['kernel']['machine']
+when 'armv6l'
+  _arch = 'armv6'
+when 'armv7l'
+  _arch = 'armv7'
+end
 
 directory '/opt/node_exporter'
-_arch = pi_zero? ? 'armv6' : 'armv7'
-_version = node['reef_pi']['node_exporter_version']
+_version = node['foundation']['node_exporter_version']
 
 remote_file "/opt/node_exporter/node_exporter-#{_version}.linux-#{_arch}.tar.gz" do
   source "https://github.com/prometheus/node_exporter/releases/download/v#{_version}/node_exporter-#{_version}.linux-#{_arch}.tar.gz"

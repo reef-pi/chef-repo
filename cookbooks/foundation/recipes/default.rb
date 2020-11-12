@@ -1,4 +1,4 @@
-package %w(strace vim htop tree git curl screen)
+package %w(strace vim htop tree git curl screen net-tools lsof)
 
 service 'ssh' do
   action [:start, :enable]
@@ -9,6 +9,10 @@ service 'systemd-timesyncd' do
 end
 
 service 'bluetooth' do
+ action [:stop, :disable]
+end
+
+service 'cups' do
  action [:stop, :disable]
 end
 

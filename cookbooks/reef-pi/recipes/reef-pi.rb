@@ -1,4 +1,7 @@
+require 'yaml'
+
 extend ReefPiHelper
+
 
 deb_pkg = installer_name
 deb_url = installer_url

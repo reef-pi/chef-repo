@@ -18,7 +18,7 @@ execute 'install-reef-pi' do
   action :nothing
 end
 
-file '/etc/reef-pi/reef-pi.yaml' do
+file '/etc/reef-pi/config.yaml' do
   content({
     'database' => '/var/lib/reef-pi/reef-pi.db'
   }.to_yaml)
@@ -30,7 +30,7 @@ systemd_unit 'reef-pi.service' do
      Description: 'reef-pi - A raspberry pi based reef tank controller',
     },
     Service: {
-      ExecStart: '/usr/bin/reef-pi daemon -config /etc/reef-pi/config.yml',
+      ExecStart: '/usr/bin/reef-pi daemon -config /etc/reef-pi/config.yaml',
       WorkingDirectory: '/var/lib/reef-pi',
       Restart: 'always',
       RestartSec: 90,

@@ -36,6 +36,8 @@ systemd_unit 'reef-pi.service' do
       RestartSec: 90,
       StartLimitInterval: 400,
       StartLimitBurst: 10,
+      After: 'network-online.target',
+      Wants: 'network-online.target'
     },
     Install: {
       WantedBy: 'multi-user.target'

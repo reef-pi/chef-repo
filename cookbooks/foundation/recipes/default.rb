@@ -20,9 +20,7 @@ service 'chef-client' do
  action [:stop, :disable]
 end
 
-file '/etc/timezone' do
-  content node['foundation']['timezone']
-end
+timezone node['foundation']['timezone']
 
 systemd_unit 'chef-client-ondemand.service' do
    content(

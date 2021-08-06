@@ -28,6 +28,8 @@ systemd_unit 'reef-pi.service' do
   content({
     Unit: {
      Description: 'reef-pi - A raspberry pi based reef tank controller',
+     Wants: 'network-online.target',
+     After: 'network-online.target'
     },
     Service: {
       ExecStart: '/usr/bin/reef-pi daemon -config /etc/reef-pi/config.yaml',

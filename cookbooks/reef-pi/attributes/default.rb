@@ -1,1 +1,1 @@
-default['reef_pi']['version'] = '3.5'
+default['reef_pi']['version'] = '4.2'

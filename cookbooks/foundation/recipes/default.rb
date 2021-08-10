@@ -48,3 +48,5 @@ systemd_unit 'chef-client.timer' do
   )
   action [:create, :start, :enable]
 end
+
+hostname node.name

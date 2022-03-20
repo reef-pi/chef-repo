@@ -41,7 +41,7 @@ systemd_unit 'chef-client.timer' do
      'Install' => { 'WantedBy' => 'timers.target' },
      'Timer' => {
        'OnBootSec' => '2min',
-       'OnUnitInactiveSec' => "30min",
+       'OnUnitInactiveSec' => "6h",
        'RandomizedDelaySec' => "30sec",
        'Unit' => 'chef-client-ondemand.service',
     }

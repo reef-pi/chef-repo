@@ -22,13 +22,16 @@ end
 
 timezone node['foundation']['timezone']
 
+
+
 systemd_unit 'chef-client-ondemand.service' do
+  bin_path =  ::File.exist?('/opt/chef/bin/chef-client') ? '/opt/chef/bin/chef-client':'/opt/cinc/bin/chef-client'
    content(
      'Unit' => { 'Description' => 'Ondemand chef-client run' },
      'Install' => { 'WantedBy' => 'multi-user.target' },
      'Service' =>{
       'Type'=> 'oneshot',
-       'ExecStart' => '/opt/chef/bin/chef-client'
+       'ExecStart' => bin_path
      }
   )
   action [:create]

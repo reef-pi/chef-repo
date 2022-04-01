@@ -44,5 +44,5 @@ service 'hostapd' do
 end
 
 service 'dhcpcd' do
-	action [ :stop, :disable]
+  action [ :stop, :disable]
 end
